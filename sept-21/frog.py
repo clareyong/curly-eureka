@@ -10,11 +10,11 @@ n = int(input())
 jumps = list(map(int, input().split()))
 
 prev = 0
-curr = abs(jumps[1] - jumps[0]) # [0, 20, 10, ]
+curr = abs(jumps[1] - jumps[0])
 
 for i in range(2, n):
     curr_stone = jumps[i]
-    jump = abs(curr_stone - jumps[i-1]) + curr # 20
+    jump = abs(curr_stone - jumps[i-1]) + curr 
     skip = abs(curr_stone - jumps[i-2]) + prev
     prev = curr
     curr = min(jump, skip)
