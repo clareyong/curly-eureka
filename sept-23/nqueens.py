@@ -24,7 +24,7 @@ def permutations(n):
             if not used[i]:
                 used[i] = True
                 path.append(i)
-                if not is_diagonal(path):
+                if not is_diagonal(path): # added this line here
                     backtrack(path, index + 1, used)
                 path.pop()
                 used[i] = False
@@ -34,5 +34,4 @@ def permutations(n):
 
     return len(results)
 
-
-print(permutations(13))
+print(permutations(13)) # at n = 13, it takes 28 seconds
